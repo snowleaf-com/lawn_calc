@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T4XDMJL2SD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T4XDMJL2SD");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="アール・㎡あたりの使用量で必要薬剤・水の計算をします。展着剤対応。シバゲン、MCPPなどお使いの方。"
+    />
+    <meta
+      name="keywords"
+      content="芝生,スプレイヤー,希釈倍率,希釈倍率計算,液肥,薬剤,除草剤,殺虫剤,防除,展着剤"
+    />
+    <meta name="author" content="snowleaf" />
+    <title>芝生・園芸用 除草剤希釈計算</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <h1>芝生・園芸用 除草剤希釈計算</h1>
+    <h2>
+      アール・㎡あたりの使用量で必要薬剤・水の計算をします。展着剤対応。シバゲン、MCPPなど適用。
+    </h2>
+    <h2>
+      <a href="../">トップへ戻る</a>
+      <a href="../dilutionRatioSprayer/">スプレイヤー希釈</a>
+      <a href="../dilutionRatio">一般希釈</a>
+    </h2>
+    <div class="parent">
+      <div class="div1"><label for="size">庭の広さ</label></div>
+      <div class="div2">
+        <input type="number" id="size" name="size" inputmode="decimal" />
+      </div>
+      <div class="div3">
+        <select id="choi-size" name="choi-size">
+          <option value="1">㎡</option>
+          <option value="2">坪</option>
+          <option value="3">アール</option>
+        </select>
+      </div>
+      <div class="div4"><label for="per-area">あたり面積</label></div>
+      <div class="div5">
+        <input
+          type="number"
+          id="per-area"
+          name="per-area"
+          value="10"
+          inputmode="decimal"
+        />
+      </div>
+      <div class="div6">
+        <select id="choi-per-area" name="choi-per-area">
+          <option value="1">アール</option>
+          <option value="2">㎡</option>
+        </select>
+      </div>
+      <div class="div7">
+        <label for="chemical-amount"
+          ><span
+            id="chemical-amount-span"
+            name="chemical-amount-span"
+            class="amount-span"
+          ></span
+          >あたりの薬剤量</label
+        >
+      </div>
+      <div class="div8">
+        <input
+          type="number"
+          id="chemical-amount"
+          name="chemical-amount"
+          inputmode="decimal"
+        />
+      </div>
+      <div class="div9">㎖(g)</div>
+      <div class="div10">
+        <label for="water-amount"
+          ><span
+            id="water-amount-span"
+            name="water-amount-span"
+            class="amount-span"
+          ></span
+          >あたりの水量</label
+        >
+      </div>
+      <div class="div11">
+        <input
+          type="number"
+          id="water-amount"
+          name="water-amount"
+          inputmode="decimal"
+        />
+      </div>
+      <div class="div12">ℓ</div>
+      <div class="div13">
+        <label for="adjuvant"
+          >展着剤（<span id="adjuvant-select">選択する</span>）</label
+        >
+      </div>
+      <div class="div14">
+        <input type="number" id="adjuvant" name="adjuvant" disabled />
+      </div>
+      <div class="div15">㎖/ℓ</div>
+      <div class="div16"><button id="calc">計算する</button></div>
+      <div class="div17">必要薬剤量</div>
+      <div class="div18">
+        <span
+          id="necessary-chemical-amount"
+          name="necessary-chemical-amount"
+        ></span
+        ><br /><span
+          id="necessary-chemical-amount-liter"
+          name="necessary-chemical-amount-liter"
+        ></span>
+      </div>
+      <div class="div19">㎖(g)<br />ℓ(kg)</div>
+      <div class="div20">必要水量</div>
+      <div class="div21">
+        <span id="necessary-water-amount" name="necessary-water-amount"></span
+        ><br /><span
+          id="necessary-water-amount-liter"
+          name="necessary-water-amount-liter"
+        ></span>
+      </div>
+      <div class="div22">㎖<br />ℓ</div>
+      <div class="div23">必要展着剤量</div>
+      <div class="div24">
+        <span
+          id="necessary-adjuvant-amount"
+          name="necessary-adjuvant-amount"
+        ></span>
+      </div>
+      <div class="div25">㎖</div>
+    </div>
+
+    <!-- 展着剤用モーダル -->
+    <div class="modal_tenchaku">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>展着剤入力</h3>
+        <div class="radio-container">
+          <label
+            ><input
+              type="radio"
+              name="option"
+              value="その他"
+              id="tenchakuOther"
+            /><span class="radio-label"
+              >その他
+              <input
+                id="tenchakuNum"
+                type="number"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                class="inputtenstyle"
+              />
+              ㎖/1ℓ</span
+            >
+          </label>
+          <label
+            ><input type="radio" name="option" value="ダイン 0.3" /><span
+              class="radio-label"
+              >ダイン (0.3㎖/1ℓ)</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="option" value="まくぴか 0.3" /><span
+              class="radio-label"
+              >まくぴか (0.3㎖/1ℓ)</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="option" value="アプローチBI 1" /><span
+              class="radio-label"
+              >アプローチBI (1㎖/1ℓ)</span
+            ></label
+          >
+          <label
+            ><input
+              type="radio"
+              name="option"
+              value="ミックスパワー 0.3"
+            /><span class="radio-label">ミックスパワー (0.3㎖/1ℓ)</span></label
+          >
+        </div>
+        <p class="errorContainer">
+          <button id="tenchaku_select">選択</button>
+          <button id="tenchaku_selectClear">クリア</button>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

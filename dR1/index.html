@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T4XDMJL2SD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T4XDMJL2SD");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>スプレイヤー用希釈計算サイト</title>
+    <script src="sprayer.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--nobanner-->
+    <p>スプレイヤー用</p>
+    <form name="sprayer">
+      <div class="parent2">
+        <div class="div1">希釈倍率は</div>
+        <div class="div2">
+          <input type="number" name="num1" />
+        </div>
+        <div class="div3">倍で撒きたい</div>
+        <div class="div4">スプレイヤー内に</div>
+        <div class="div5">
+          <input type="number" name="num2" />
+        </div>
+        <div class="div6">ml(cc)分作りたい</div>
+        <div class="div7">スプレイヤーの<br />希釈倍率は</div>
+        <div class="div8">
+          <input type="number" name="num3" value="100" />
+        </div>
+        <div class="div9">倍でセットしたい<br />（aqua⁺は100倍）</div>
+        <div class="div10">
+          <input type="button" name="spInput" value="計算する" />
+        </div>
+        <div class="div11">準備する薬剤は</div>
+        <div class="div12">
+          <span id="ans3" style="font-weight: bold">-</span>
+        </div>
+        <div class="div13">ml(cc)</div>
+        <div class="div14">準備する<br />希釈用の水は</div>
+        <div class="div15">
+          <span id="ans4" style="font-weight: bold">-</span>
+        </div>
+        <div class="div16">ml(cc)</div>
+      </div>
+    </form>
+    <hr />
+    <p>一般希釈用</p>
+    <form name="genDil">
+      <div class="parent1">
+        <div class="div1">希釈倍率は</div>
+        <div class="div2">
+          <input type="number" name="num1" />
+        </div>
+        <div class="div3">倍で撒きたい</div>
+        <div class="div4">水溶液は</div>
+        <div class="div5">
+          <input type="number" name="num2" />
+        </div>
+        <div class="div6">L作りたい</div>
+        <div class="div7">
+          <input
+            type="button"
+            name="genDilInput"
+            value="計算する"
+            id="button1"
+          />
+        </div>
+        <div class="div8">
+          <span id="ans1" style="font-weight: bold">-</span>
+        </div>
+        <div class="div9">L</div>
+        <div class="div10">
+          <span id="ans2" style="font-weight: bold">-</span>
+        </div>
+        <div class="div11">準備する薬剤は</div>
+        <div class="div12">ml(cc)</div>
+      </div>
+    </form>
+    <hr />
+  </body>
+</html>

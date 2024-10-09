@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>窒素量の計算</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>窒素量の計算</h1>
+    <p>
+      <a href="../">トップへ戻る</a>
+      <a href="https://garden.snow-leaf.com/dilutionRatioSprayer/"
+        >スプレイヤー希釈</a
+      ><br />
+      <a href="https://garden.snow-leaf.com/dilutionRatio">一般希釈</a>
+      <a href="https://garden.snow-leaf.com/dilutionHerbicide">除草剤希釈</a>
+    </p>
+    <hr class="marginbottom" />
+    <h2>肥料必要量計算</h2>
+    <div class="input-container">
+      <label for="area">庭の面積:</label>
+      <input
+        class="inputstyle"
+        type="number"
+        id="area"
+        inputmode="decimal"
+        placeholder=""
+      />
+      <span>㎡</span>
+    </div>
+    <div class="input-container">
+      <label for="nitrogenPerSquareMeter"
+        >1平方メートルあたりの必要窒素量:</label
+      >
+      <input
+        class="inputstyle"
+        type="number"
+        id="nitrogenPerSquareMeter"
+        inputmode="decimal"
+        placeholder=""
+      />
+      <span>g/㎡</span>
+    </div>
+    <div class="input-container">
+      <label for="nitrogenPercentage">肥料の窒素含有率:</label>
+      <input
+        class="inputstyle"
+        type="number"
+        id="nitrogenPercentage"
+        inputmode="decimal"
+        placeholder=""
+      />
+      <span>％</span>
+    </div>
+    <div class="input-container">
+      <button onclick="calculateFertilizer()" class="button">計算</button>
+    </div>
+    <h3>必要な肥料の量：</h3>
+    <p id="result">「計算」を押してください。</p>
+
+    <hr class="marginbottom margintop" />
+    <h2>平米あたり窒素量計算</h2>
+    <div class="input-container">
+      <label for="area2">庭の面積:</label>
+      <input
+        class="inputstyle"
+        type="number"
+        inputmode="decimal"
+        id="area2"
+        placeholder=""
+      />
+      <span>㎡</span>
+    </div>
+    <div class="input-container">
+      <label for="nitrogenPercentage2">肥料の窒素含有率:</label>
+      <input
+        class="inputstyle"
+        type="number"
+        inputmode="decimal"
+        id="nitrogenPercentage2"
+        placeholder=""
+      />
+      <span>％</span>
+    </div>
+    <div class="input-container">
+      <label for="fertilizerAmount">散布する肥料の総量</label>
+      <input
+        class="inputstyle"
+        type="number"
+        inputmode="decimal"
+        id="fertilizerAmount"
+        placeholder=""
+      />
+      <span>g</span>
+    </div>
+    <div class="input-container">
+      <button onclick="calculateNitrogenPerSquareMeter()" class="button">
+        計算
+      </button>
+    </div>
+    <h3>平米あたりの窒素量：</h3>
+    <p id="result2">「計算」を押してください。</p>
+    <script src="script.js"></script>
+  </body>
+</html>

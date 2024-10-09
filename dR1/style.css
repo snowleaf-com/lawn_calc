@@ -1,0 +1,169 @@
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 12px;
+}
+
+hr {
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 1px;         /* 高さ(※古いIE用) */
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input[type=button] {
+  width: 100%;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  display : inline-block;
+  border-radius : 5%;
+  font-size : 8pt;
+  text-align : center;
+  cursor : pointer;
+  padding : 3px 12px;
+  background : #003300;
+  color : #ffffff;
+  line-height : 1em;
+  transition : .3s;
+  box-shadow : 1px 1px 3px #666666;
+  border : 2px solid #003300;
+}
+input[type=button]:hover {
+box-shadow : none;
+color : #003300;
+background : #ffffff;
+}
+
+#ans1,#ans2,#ans3,#ans4 {
+  font-weight: bold;
+  color: red;
+}
+
+.parent1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+.parent1>.div1 { 
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: end;
+}
+.parent1>.div2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.parent1>.div3 { 
+  grid-area: 1 / 3 / 2 / 4; 
+}
+.parent1>.div4 { 
+  grid-area: 2 / 1 / 3 / 2; 
+  justify-self: end;
+}
+.parent1>.div5 { 
+  grid-area: 2 / 2 / 3 / 3; 
+}
+.parent1>.div6 {
+  grid-area: 2 / 3 / 3 / 4; 
+  }
+.parent1>.div7 { 
+  grid-area: 3 / 1 / 4 / 4;
+}
+.parent1>.div8 { 
+  grid-area: 4 / 2 / 5 / 3;
+  justify-self: end;
+}
+.parent1>.div9 { 
+  grid-area: 4 / 3 / 5 / 4;
+}
+.parent1>.div10 {
+  grid-area: 5 / 2 / 6 / 3;
+  justify-self: end;
+}
+.parent1>.div11 { 
+  grid-area: 4 / 1 / 6 / 2;
+  justify-self: end;
+}
+.parent1>.div12 { 
+  grid-area: 5 / 3 / 6 / 4; 
+}
+
+
+.parent2 {
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}  
+.parent2>.div1 { 
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: end; 
+}
+.parent2>.div2 { 
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: center; 
+}
+.parent2>.div3 { 
+  grid-area: 1 / 3 / 2 / 4; 
+}
+.parent2>.div4 {
+  grid-area: 2 / 1 / 3 / 2;
+  justify-self: end; 
+}
+.parent2>.div5 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.parent2>.div6 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.parent2>.div7 {
+  grid-area: 3 / 1 / 4 / 2;
+  justify-self: end;
+}
+.parent2>.div8 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.parent2>.div9 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+.parent2>.div10 {
+  grid-area: 4 / 1 / 5 / 4;
+}
+.parent2>.div11 {
+  grid-area: 5 / 1 / 6 / 2;
+  justify-self: end;
+}
+.parent2>.div12 {
+  grid-area: 5 / 2 / 6 / 3;
+  justify-self: end;
+}
+.parent2>.div13 {
+  grid-area: 5 / 3 / 6 / 4;
+}
+.parent2>.div14 {
+  grid-area: 6 / 1 / 7 / 2;
+  justify-self: end;
+}
+.parent2>.div15 {
+  grid-area: 6 / 2 / 7 / 3;
+  justify-self: end;
+}
+.parent2>.div16 {
+  grid-area: 6 / 3 / 7 / 4;
+}

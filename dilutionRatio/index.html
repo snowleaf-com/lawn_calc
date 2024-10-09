@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T4XDMJL2SD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T4XDMJL2SD");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="液肥や薬剤を散布する際の希釈倍率の計算を、お庭の面積やその薬剤の散布量などから計算をします。"
+    />
+    <meta
+      name="keywords"
+      content="芝生,スプレイヤー,希釈倍率,希釈倍率計算,液肥,薬剤,除草剤,殺虫剤,防除"
+    />
+    <meta name="author" content="snowleaf" />
+    <title>希釈倍率計算ソフト</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <script type="module" src="script.js"></script>
+  <body>
+    <div class="intro">
+      <h1>
+        希釈倍率計算ソフト<br /><a href="../">トップへ戻る</a>
+        <a href="https://garden.snow-leaf.com/dilutionRatioSprayer"
+          >スプレイヤー用</a
+        >
+        <a href="https://garden.snow-leaf.com/dilutionHerbicide">除草剤用</a>
+      </h1>
+      <h2>
+        液肥や薬剤を散布する際の希釈倍率の計算を、お庭の面積やその薬剤の散布量などから計算をします。
+      </h2>
+      <button class="modal-btn">使い方</button>
+    </div>
+    <div class="parent">
+      <div class="div1">
+        <label for="hirosa1">庭の広さ</label>
+      </div>
+      <div class="div2">
+        <input
+          id="hirosa1"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">㎡</span>
+      </div>
+      <div class="div3">
+        <input
+          id="hirosatubo1"
+          type="number"
+          min="0"
+          step="0.01"
+          tabindex="-1"
+          inputmode="decimal"
+          class="inputsubstyle"
+        /><span class="tani">坪</span>
+      </div>
+      <div class="div4">
+        <label for="sanpu1">希釈液散布量</label>
+      </div>
+      <div class="div5">
+        <input
+          id="sanpu1"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">ℓ/㎡</span>
+      </div>
+      <div class="div6">
+        <input
+          id="sanpua1"
+          type="number"
+          min="0"
+          step="0.01"
+          tabindex="-1"
+          inputmode="decimal"
+          class="inputsubstyle"
+        /><span class="tani">ℓ/a</span>
+      </div>
+      <div class="div7">
+        <label for="bairitu1">希釈倍率</label>
+      </div>
+      <div class="div8">
+        <input
+          id="bairitu1"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">倍</span>
+      </div>
+      <div class="div9">
+        <label for="hituyouy1">必要薬剤量</label>
+      </div>
+      <div class="div10">
+        <p class="div10p">
+          <span id="hituyouy1">-</span>
+          <span class="tani">㎖</span>
+        </p>
+        <p class="div10p">
+          <span id="hituyouyl1">-</span>
+          <span class="tani">ℓ</span>
+        </p>
+      </div>
+      <div class="div11">
+        <label for="hituyoum1">必要水量</label>
+      </div>
+      <div class="div12">
+        <p class="div12p">
+          <span id="hituyoum1">-</span>
+          <span class="tani">㎖</span>
+        </p>
+        <p class="div12p">
+          <span id="hituyouml1">-</span>
+          <span class="tani">ℓ</span>
+        </p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>使い方</h3>
+        <p class="introp">
+          全てのピンクの入力欄に値を入力すると、計算結果が出力されます。
+        </p>
+        <p class="introp">
+          庭の広さが坪しかわからない場合や、薬剤の散布量がℓ/aしかわからない場合は灰色の欄に入力してください。自動的に換算します。
+        </p>
+        <p class="introp"><br /></p>
+        <p class="introp">①庭の広さを入力します。</p>
+        <p class="introp">
+          ②希釈液散布量・希釈倍率はそれぞれの薬剤や液肥の説明書に記述があります。それらを入力してください。
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

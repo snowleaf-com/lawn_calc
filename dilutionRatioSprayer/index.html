@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T4XDMJL2SD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T4XDMJL2SD");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="スプレイヤー（希釈散布機）を用いて、液肥や薬剤を散布する際の希釈倍率の計算を、お庭の面積やその薬剤の散布量などから計算をします。"
+    />
+    <meta
+      name="keywords"
+      content="芝生,スプレイヤー,希釈倍率,希釈倍率計算,液肥,薬剤,除草剤,殺虫剤,防除,展着剤"
+    />
+    <meta name="author" content="snowleaf" />
+    <title>希釈倍率計算ソフト（スプレイヤー用）</title>
+    <link rel="stylesheet" type="text/css" href="sprayer.css" />
+  </head>
+  <script type="module" src="sprayer.js"></script>
+  <body>
+    <div class="intro">
+      <h1>
+        希釈倍率計算ソフト【スプレイヤー用】ver2.3.2<br /><a href="../"
+          >トップへ戻る</a
+        >
+        <a href="https://garden.snow-leaf.com/dilutionRatio">一般用</a>
+        <a href="https://garden.snow-leaf.com/dilutionHerbicide">除草剤用</a>
+      </h1>
+      <h2>
+        スプレイヤー（希釈散布機）を用いて、液肥や薬剤を散布する際の希釈倍率の計算を、お庭の面積やその薬剤の散布量などから計算をします。
+      </h2>
+      <button class="modal-btn">使い方</button>
+      <button class="modal-btn2">更新履歴</button>
+    </div>
+    <div class="parent">
+      <div class="div1">
+        <label for="hirosa2">庭の広さ</label>
+      </div>
+      <div class="div2">
+        <input
+          id="hirosa2"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">㎡</span>
+      </div>
+      <div class="div3">
+        <input
+          id="hirosatubo2"
+          type="number"
+          min="0"
+          step="0.01"
+          tabindex="-1"
+          inputmode="decimal"
+          class="inputsubstyle"
+        /><span class="tani">坪</span>
+      </div>
+      <div class="div4">
+        <label for="sanpu2">希釈液散布量</label>
+      </div>
+      <div class="div5">
+        <input
+          id="sanpu2"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">ℓ/㎡</span>
+      </div>
+      <div class="div6">
+        <input
+          id="sanpua2"
+          type="number"
+          min="0"
+          step="0.01"
+          tabindex="-1"
+          inputmode="decimal"
+          class="inputsubstyle"
+        /><span class="tani">ℓ/a</span>
+      </div>
+      <div class="div7">
+        <label for="bairitu2">希釈倍率</label>
+      </div>
+      <div class="div8">
+        <input
+          id="bairitu2"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">倍</span>
+      </div>
+      <div class="div9">
+        <label for="sprayer">スプレイヤー希釈倍率</label>
+      </div>
+      <div class="div10">
+        <input
+          id="sprayer"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">倍</span>
+      </div>
+      <div class="div11">
+        <label for="sprayeryouryou">スプレイヤータンク容量</label>
+      </div>
+      <div class="div12">
+        <input
+          id="sprayeryouryou"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputstyle"
+        /><span class="tani">㎖</span>
+      </div>
+
+      <div class="div18">
+        <label for="tenchaku"
+          ><span class="tenchaku_modal">展着剤</span>（<span
+            id="tenchaku_name"
+          ></span
+          >）</label
+        >
+      </div>
+      <div class="div19">
+        <input
+          id="tenchaku"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          class="inputsubstyle"
+          disabled
+        /><span class="tani">㎖/ℓ</span>
+      </div>
+
+      <div class="div13">
+        <label for="hituyouy2">薬剤量</label>
+      </div>
+      <div class="div14">
+        <span id="hituyouy2"></span> <span class="tani">㎖</span>
+      </div>
+      <div class="div15">
+        <label for="hituyoum2">水量</label>
+      </div>
+      <div class="div16">
+        <span id="hituyoum2"></span> <span class="tani">㎖</span>
+      </div>
+      <div class="div20">
+        <label for="hituyout2">展着剤量</label>
+      </div>
+      <div class="div21">
+        <span id="hituyout2"></span> <span class="tani">㎖</span>
+      </div>
+      <div class="div17">
+        <span id="sanpukaisuu"></span>
+      </div>
+    </div>
+    <button id="tenchaku_selectClear">クリア</button>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>使い方</h3>
+        <p>緑の欄に全て入力すれば結果が出力されます。</p>
+        <p>
+          庭の広さが坪しかわからない場合や、薬剤の散布量がℓ/aしかわからない場合は灰色の欄に入力してください。自動的に換算します。
+        </p>
+        <p><br /></p>
+        <p>①庭の広さを入力します。</p>
+        <p>
+          ②希釈液散布量・希釈倍率はそれぞれの薬剤や液肥の説明書に記述があります。それらを参考に入力してください。
+        </p>
+        <p>
+          ③スプレイヤー希釈倍率・タンク容量も各々お使いのスプレイヤーの説明書を参考に入力してください。
+        </p>
+        <p>
+          ④展着剤も対応しましたので、入れる場合は別窓より選択or入力してください。10ℓあたりの量が説明欄に記載があるかと思います。
+        </p>
+        <p>
+          ※aqua+では希釈倍率100倍の容量500㎖です。アクアミックスは倍率変更があり、容量は1250㎖です。
+        </p>
+      </div>
+    </div>
+    <div class="modal2">
+      <div class="modal-content2">
+        <span class="close-btn2">&times;</span>
+        <h3>更新履歴</h3>
+        <p>23.05.09 0またはマイナス入力をエラーとする処理 2.3.2</p>
+        <p>23.05.06 結果を総量表示へ（分割表示はβ版） 2.3.1</p>
+        <p>23.05.06 展着剤対応 2.3.0</p>
+        <p>23.05.04 更新履歴追加 2.2.0</p>
+        <p>23.05.04 散布回数3回以上のバグ修正 2.1.0</p>
+        <p>23.05.02 旧式からリニューアル 2.0.0</p>
+      </div>
+    </div>
+    <div class="modal_tenchaku">
+      <div class="modal-content3">
+        <span class="close-btn3">&times;</span>
+        <h3>展着剤入力</h3>
+        <div class="radio-container">
+          <label
+            ><input
+              type="radio"
+              name="option"
+              value="その他"
+              id="tenchakuOther"
+            /><span class="radio-label"
+              >その他
+              <input
+                id="tenchakuNum"
+                type="number"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                class="inputtenstyle"
+              />
+              ㎖/1ℓ</span
+            >
+          </label>
+          <label
+            ><input type="radio" name="option" value="アプローチBI 1" /><span
+              class="radio-label"
+              >アプローチBI (1㎖/1ℓ)</span
+            ></label
+          >
+          <label
+            ><input
+              type="radio"
+              name="option"
+              value="ミックスパワー 0.3"
+            /><span class="radio-label">ミックスパワー (0.3㎖/1ℓ)</span></label
+          >
+          <label
+            ><input type="radio" name="option" value="ダイン 0.3" /><span
+              class="radio-label"
+              >ダイン (0.3㎖/1ℓ)</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="option" value="まくぴか 0.3" /><span
+              class="radio-label"
+              >まくぴか (0.3㎖/1ℓ)</span
+            ></label
+          >
+        </div>
+        <p>
+          <button id="tenchaku_select">選択</button>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

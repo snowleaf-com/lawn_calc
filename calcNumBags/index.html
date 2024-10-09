@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T4XDMJL2SD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T4XDMJL2SD");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>必要砂量計算サイト</title>
+    <style>
+      .parent > div {
+        border: 1px solid green;
+        font-size: x-small;
+        text-align: center;
+      }
+      input {
+        width: 50px;
+      }
+      .parent {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(14, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 5px;
+        align-items: end;
+      }
+      .div1 {
+        grid-area: 1 / 4 / 3 / 5;
+      }
+      .div2 {
+        grid-area: 2 / 5 / 3 / 6;
+      }
+      .div3 {
+        grid-area: 3 / 1 / 5 / 2;
+      }
+      .div4 {
+        grid-area: 4 / 2 / 5 / 3;
+      }
+      .div5 {
+        grid-area: 4 / 3 / 5 / 4;
+      }
+      .div6 {
+        grid-area: 3 / 4 / 5 / 5;
+      }
+      .div7 {
+        grid-area: 4 / 5 / 5 / 6;
+      }
+      .div8 {
+        grid-area: 4 / 6 / 5 / 7;
+      }
+      .div9 {
+        grid-area: 3 / 7 / 5 / 8;
+      }
+      .div10 {
+        grid-area: 4 / 8 / 5 / 9;
+      }
+      .div11 {
+        grid-area: 5 / 1 / 7 / 2;
+      }
+      .div12 {
+        grid-area: 6 / 2 / 7 / 3;
+      }
+      .div13 {
+        grid-area: 6 / 3 / 7 / 4;
+      }
+      .div14 {
+        grid-area: 5 / 4 / 7 / 5;
+      }
+      .div15 {
+        grid-area: 6 / 5 / 7 / 6;
+      }
+      .div16 {
+        grid-area: 6 / 6 / 7 / 7;
+      }
+      .div17 {
+        grid-area: 5 / 7 / 7 / 8;
+      }
+      .div18 {
+        grid-area: 6 / 8 / 7 / 9;
+      }
+      .div19 {
+        grid-area: 7 / 4 / 9 / 5;
+      }
+      .div20 {
+        grid-area: 8 / 5 / 9 / 6;
+      }
+      .div21 {
+        grid-area: 9 / 4 / 11 / 5;
+      }
+      .div22 {
+        grid-area: 10 / 5 / 11 / 6;
+      }
+      .div23 {
+        grid-area: 10 / 6 / 11 / 7;
+      }
+      .div24 {
+        grid-area: 9 / 7 / 11 / 8;
+      }
+      .div25 {
+        grid-area: 10 / 8 / 11 / 9;
+      }
+      .div26 {
+        grid-area: 11 / 1 / 13 / 2;
+      }
+      .div27 {
+        grid-area: 12 / 2 / 13 / 3;
+      }
+      .div28 {
+        grid-area: 12 / 3 / 13 / 4;
+      }
+      .div29 {
+        grid-area: 11 / 4 / 13 / 5;
+      }
+      .div30 {
+        grid-area: 12 / 5 / 13 / 6;
+      }
+      .div31 {
+        grid-area: 12 / 6 / 13 / 7;
+      }
+      .div32 {
+        grid-area: 11 / 7 / 13 / 8;
+      }
+      .div33 {
+        grid-area: 12 / 8 / 13 / 9;
+      }
+      .div34 {
+        grid-area: 13 / 1 / 15 / 2;
+      }
+      .div35 {
+        grid-area: 14 / 2 / 15 / 3;
+      }
+      .div36 {
+        grid-area: 14 / 3 / 15 / 4;
+      }
+      .div37 {
+        grid-area: 13 / 4 / 15 / 5;
+      }
+      .div38 {
+        grid-area: 14 / 5 / 15 / 6;
+      }
+      .div39 {
+        grid-area: 14 / 6 / 15 / 7;
+      }
+      .div40 {
+        grid-area: 13 / 7 / 15 / 8;
+      }
+      .div41 {
+        grid-area: 14 / 8 / 15 / 9;
+      }
+      @media screen and (min-width: 481px) {
+        /* 481px以上に適用されるCSS（タブレット用） */
+        .parent > div {
+          border: 1px solid green;
+          font-size: medium;
+          text-align: center;
+        }
+        .parent {
+          max-width: 500px;
+          grid-column-gap: 3px;
+          grid-row-gap: 7px;
+          margin: 0 auto;
+        }
+        input {
+          width: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form name="sikiatukeisan">
+      <div class="parent">
+        <div class="div1">
+          敷く厚み<br /><input id="sikiatu" type="number" />
+        </div>
+        <div class="div2">cm</div>
+        <div class="div3">敷面積<br /><span name="sikimenseki">---</span></div>
+        <div class="div4">㎡</div>
+        <div class="div5">=</div>
+        <div class="div6">
+          縦<br /><input id="sikimensekitate" type="number" />
+        </div>
+        <div class="div7">m</div>
+        <div class="div8">×</div>
+        <div class="div9">
+          横<br /><input id="sikimensekiyoko" type="number" />
+        </div>
+        <div class="div10">m</div>
+        <div class="div11">
+          必要砂量<br /><span name="hituyousunaryou">---</span>
+        </div>
+        <div class="div12">㎥</div>
+        <div class="div13">=</div>
+        <div class="div14">敷面積<br /><span name="sikimenseki">---</span></div>
+        <div class="div15">㎡</div>
+        <div class="div16">×</div>
+        <div class="div17">敷く厚み<br /><span id="sikiatumm">---</span></div>
+        <div class="div18">m</div>
+        <div class="div19">
+          敷く物の比重<br /><input name="hijuu" type="number" />
+        </div>
+        <div class="div20">t</div>
+        <div class="div21">
+          １袋の内容量<br /><input id="hukurokg" type="number" />
+        </div>
+        <div class="div22">kg</div>
+        <div class="div23">→</div>
+        <div class="div24">t換算<br /><span name="hukuroton">---</span></div>
+        <div class="div25">t</div>
+        <div class="div26">
+          １袋あたりの立米<br /><span name="hukuroryubei">---</span>
+        </div>
+        <div class="div27">㎥</div>
+        <div class="div28">=</div>
+        <div class="div29">
+          １袋の内容量<br /><span name="hukuroton">---</span>
+        </div>
+        <div class="div30">t</div>
+        <div class="div31">÷</div>
+        <div class="div32">敷く物の比重<br /><span name="hijuu">---</span></div>
+        <div class="div33">t</div>
+        <div class="div34">
+          必要袋数<br /><span id="hituyouhukuro">---</span>
+        </div>
+        <div class="div35">袋</div>
+        <div class="div36">=</div>
+        <div class="div37">
+          必要砂量<br /><span name="hituyousunaryou">---</span>
+        </div>
+        <div class="div38">㎥</div>
+        <div class="div39">÷</div>
+        <div class="div40">
+          １袋あたりの立米<br /><span name="hukuroryubei">---</span>
+        </div>
+        <div class="div41">㎥</div>
+      </div>
+    </form>
+    <br /><br />
+    参考：比重は砂や土は1.6tくらいです。「敷きたい素材　比重」で検索すれば出てきます。<br />また、袋の内容量も大体15kgですが、素材によって違うので調べてください。
+
+    <!-- 
+  <form name="sikiatukeisan">
+    敷く厚み<br><input id="sikiatu" type="number">cm<br><br>
+    敷き面積<br>
+    <span name="sikimenseki">---</span> ㎡ =
+    <input id="sikimensekitate" type="number">m × 
+    <input id="sikimensekiyoko" type="number">m
+    <br><br>
+    
+    必要砂量 <span name="hituyousunaryou">---</span> ㎥ = 
+    敷面積 <span name="sikimenseki">---</span> ㎡ * 敷く厚み
+    <span id="sikiatumm">---</span> m<br><br><br>
+    
+    比重(砂1.7, 土1.2など)<br>
+    <input name="hijuu" type="number">t<br><br>
+
+    砂利や土の袋の内容量(大体15kg)<br>
+    <input id="hukurokg" type="number"> kg (
+    <span name="hukuroton">---</span> t )<br><br>
+    
+    その袋の１袋あたりの立米<br>
+    <span name="hukuroryubei">---</span> ㎥ = 
+    袋の内容量 <span name="hukuroton">---</span> t ÷ 
+    比重 <span name="hijuu">---</span> t 
+    <br><br>
+    
+    必要袋数
+    約<span id="hituyouhukuro">---</span>袋 = 
+    必要砂量 <span name="hituyousunaryou">---</span>㎥ ÷ 
+    １袋あたりの立米 <span name="hukuroryubei">---</span>㎥
+    </form> -->
+    <script>
+      // input要素を取得
+      const sikiatu = document.getElementById("sikiatu");
+      const sikimensekitate = document.getElementById("sikimensekitate");
+      const sikimensekiyoko = document.getElementById("sikimensekiyoko");
+      const hijuu = document.getElementsByName("hijuu")[0];
+      const hukurokg = document.getElementById("hukurokg");
+
+      // span要素を取得
+      const sikimenseki = document.getElementsByName("sikimenseki")[0];
+      const hituyousunaryou = document.getElementsByName("hituyousunaryou")[0];
+      const hukuroton = document.getElementsByName("hukuroton")[0];
+      const hukuroryubei = document.getElementsByName("hukuroryubei");
+      const hituyouhukuro = document.getElementById("hituyouhukuro");
+
+      const hijuu2 = document.getElementsByName("hijuu")[1];
+      const sikimenseki2 = document.getElementsByName("sikimenseki")[1];
+      const hituyousunaryou2 = document.getElementsByName("hituyousunaryou")[1];
+      const hukuroton2 = document.getElementsByName("hukuroton")[1];
+
+      // input要素にイベントリスナーを設定
+      sikiatu.addEventListener("input", calculate);
+      sikimensekitate.addEventListener("input", calculate);
+      sikimensekiyoko.addEventListener("input", calculate);
+      hijuu.addEventListener("input", calculate);
+      hukurokg.addEventListener("input", calculate);
+
+      function calculate() {
+        // 敷圧をmに変換して表示
+        const sikiatumm = sikiatu.value / 100;
+        document.getElementById("sikiatumm").textContent = sikiatumm;
+
+        // 敷面積を計算して表示
+        const sikimensekiValue = sikimensekitate.value * sikimensekiyoko.value;
+        sikimenseki.textContent = sikimensekiValue;
+        sikimenseki2.textContent = sikimensekiValue;
+
+        // 必要砂量を計算して表示
+        const hituyousunaryouValue = sikimensekiValue * sikiatumm;
+        hituyousunaryou.textContent = hituyousunaryouValue;
+        hituyousunaryou2.textContent = hituyousunaryouValue;
+
+        // 砂の比重を取得して表示
+        const hijuuValue = hijuu.value;
+        hijuu2.textContent = hijuuValue;
+        for (let i = 0; i < hukuroryubei.length; i++) {
+          hukuroryubei[i].textContent = hituyousunaryouValue / hijuuValue;
+        }
+
+        // 砂袋の重さを計算して表示
+        const hukurotonValue = hukurokg.value / 1000;
+        hukuroton.textContent = hukurotonValue;
+        hukuroton2.textContent = hukurotonValue;
+
+        // 砂袋の立米を計算して表示
+        const hukuroryubeiValue = hukurotonValue / hijuuValue;
+        for (let i = 0; i < hukuroryubei.length; i++) {
+          hukuroryubei[i].textContent = hukuroryubeiValue;
+        }
+
+        // 砂袋の数を計算して表示
+        const hituyouhukuroValue = hituyousunaryouValue / hukuroryubeiValue;
+        hituyouhukuro.textContent = hituyouhukuroValue;
+      }
+    </script>
+  </body>
+</html>
