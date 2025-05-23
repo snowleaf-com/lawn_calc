@@ -7,15 +7,15 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-T4XDMJL2SD"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || []
       function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
       }
-      gtag("js", new Date());
+      gtag('js', new Date())
 
-      gtag("config", "G-T4XDMJL2SD");
+      gtag('config', 'G-T4XDMJL2SD')
     </script>
-    <title>お庭用 お役立ち計算ソフト集</title>
+    <title>お庭用 お役立ち計算ソフト集（芝生・農薬など）</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
@@ -27,21 +27,99 @@
       content="芝生,スプレイヤー,農薬,希釈倍率,希釈倍率計算,液肥,薬剤,除草剤,殺虫剤,防除,砂の厚み計算,砂利,石,土,砕石"
     />
     <meta name="author" content="snowleaf" />
+    <!-- OGP (Open Graph Protocol) tags -->
+    <meta property="og:title" content="お庭用 お役立ち計算ソフト集（芝生・農薬など）" />
+    <meta
+      property="og:description"
+      content="主にお庭の芝生用の計算ソフトを載せています。薬剤・液肥の希釈倍率計算、スプレイヤーも対応しています。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://garden.snow-leaf.com/" />
+    <meta property="og:image" content="https://garden.snow-leaf.com/ogp.png" />
+    <meta property="og:site_name" content="お庭用 お役立ち計算ソフト集（芝生・農薬など）" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="お庭用 お役立ち計算ソフト集（芝生・農薬など）" />
+    <meta
+      name="twitter:description"
+      content="主にお庭の芝生用の計算ソフトを載せています。薬剤・液肥の希釈倍率計算、スプレイヤーも対応しています。"
+    />
+    <meta name="twitter:image" content="https://garden.snow-leaf.com/ogp.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="/favicon.ico" id="favicon" />
+
+    <!-- JSON-LD for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "お庭用 お役立ち計算ソフト集（芝生・農薬など）",
+        "url": "https://garden.snow-leaf.com/",
+        "description": "主にお庭の芝生用の計算ソフトを載せています。薬剤・液肥の希釈倍率計算、スプレイヤーも対応しています。",
+        "author": {
+          "@type": "Person",
+          "name": "snowleaf"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://garden.snow-leaf.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
   <body>
+    <div class="background-pattern"></div>
     <header>
-      <h1>お庭用 お役立ち計算ソフト集（芝生・農薬など）</h1>
+      <div class="header-content">
+        <div class="header-icon">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <h1>お庭用 お役立ち計算ソフト集<br>（芝生・農薬など）</h1>
+        <p class="header-subtitle">芝生・農薬・ガーデニングの計算を簡単に</p>
+      </div>
     </header>
     <main>
-      <h2>希釈倍率計算関係</h2>
-      <ul id="work-list1"></ul>
-      <h2>その他</h2>
-      <ul id="work-list2"></ul>
+      <div class="container">
+        <section class="tools-section">
+          <div class="section-header">
+            <i class="fas fa-calculator section-icon"></i>
+            <h2>希釈倍率計算関係</h2>
+          </div>
+          <div class="tools-grid" id="work-list1"></div>
+        </section>
+
+        <section class="tools-section">
+          <div class="section-header">
+            <i class="fas fa-tools section-icon"></i>
+            <h2>その他</h2>
+          </div>
+          <div class="tools-grid" id="work-list2"></div>
+        </section>
+      </div>
     </main>
     <footer>
-      <p>&copy; <a href="https://snow-leaf.com">ユキノハ</a></p>
+      <div class="footer-content">
+        <p>&copy; 2024 <a href="https://snow-leaf.com">SnowLeaf</a></p>
+        <div class="footer-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+      </div>
     </footer>
     <script src="main.js"></script>
   </body>
