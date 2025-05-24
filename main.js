@@ -3,34 +3,34 @@ const works = [
     title: '希釈倍率計算ソフト（スプレイヤー対応）',
     description:
       'スプレイヤー（希釈散布機）を用いる際、庭の面積(㎡・坪)・散布量(ℓ/㎡・ℓ/a)から希釈倍率の計算を行えます。',
-    url: 'https://garden.snow-leaf.com/dilutionRatioSprayer/',
+    url: 'dilutionRatioSprayer/',
     icon: 'fas fa-spray-can',
   },
   {
     title: '希釈倍率計算ソフト（一般希釈用）',
     description:
       '庭の面積(㎡・坪)・散布量(ℓ/㎡・ℓ/a)から希釈倍率の計算を行えます。',
-    url: 'https://garden.snow-leaf.com/dilutionRatio/',
+    url: 'dilutionRatio/',
     icon: 'fas fa-tint',
   },
   {
     title: '除草剤計算',
     description:
       '庭の面積（㎡・坪・アール）と、あたり使用量（アール・㎡）から必要薬剤・水を計算します。',
-    url: 'https://garden.snow-leaf.com/dilutionHerbicide/',
+    url: 'dilutionHerbicide/',
     icon: 'fas fa-leaf',
   },
   {
     title: '窒素量計算',
     description:
       '庭の面積、お手持ちの肥料の窒素含有率、必要窒素量から、必要肥料量を算出。逆にこの量を撒くと、平米あたりどのくらい窒素量を得られるのかも算出します。',
-    url: 'https://garden.snow-leaf.com/nitrogenCalc/',
+    url: 'nitrogenCalc/',
     icon: 'fas fa-atom',
   },
   {
     title: '希釈倍率計算ソフト（簡易版）',
     description: 'スプレイヤー・一般用の簡易版。初代です。',
-    url: 'https://garden.snow-leaf.com/dR1/',
+    url: 'dR1/',
     icon: 'fas fa-calculator',
   },
 ]
@@ -39,7 +39,7 @@ const works2 = [
     title: '砂利・土を敷く際の必要袋数計算ソフト',
     description:
       'その名の通り、砂利や土を敷く際に敷き厚やその素材の比重から必要立米・必要袋数を計算します。',
-    url: 'https://garden.snow-leaf.com/calcNumBags/',
+    url: 'calcNumBags/',
     icon: 'fas fa-mountain',
   },
 ]
@@ -52,7 +52,7 @@ function createToolCard(work) {
   div.className = 'tool-card'
   div.innerHTML = `
     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-      <i class="${work.icon}" style="font-size: 2rem; color: #4facfe;"></i>
+      <i class="${work.icon}" style="font-size: 2rem; color: #22c55e;"></i>
       <h3 style="margin: 0;">${work.title}</h3>
     </div>
     <p>${work.description}</p>

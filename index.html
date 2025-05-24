@@ -28,7 +28,10 @@
     />
     <meta name="author" content="snowleaf" />
     <!-- OGP (Open Graph Protocol) tags -->
-    <meta property="og:title" content="お庭用 お役立ち計算ソフト集（芝生・農薬など）" />
+    <meta
+      property="og:title"
+      content="お庭用 お役立ち計算ソフト集（芝生・農薬など）"
+    />
     <meta
       property="og:description"
       content="主にお庭の芝生用の計算ソフトを載せています。薬剤・液肥の希釈倍率計算、スプレイヤーも対応しています。"
@@ -36,12 +39,18 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://garden.snow-leaf.com/" />
     <meta property="og:image" content="https://garden.snow-leaf.com/ogp.png" />
-    <meta property="og:site_name" content="お庭用 お役立ち計算ソフト集（芝生・農薬など）" />
+    <meta
+      property="og:site_name"
+      content="お庭用 お役立ち計算ソフト集（芝生・農薬など）"
+    />
     <meta property="og:locale" content="ja_JP" />
 
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="お庭用 お役立ち計算ソフト集（芝生・農薬など）" />
+    <meta
+      name="twitter:title"
+      content="お庭用 お役立ち計算ソフト集（芝生・農薬など）"
+    />
     <meta
       name="twitter:description"
       content="主にお庭の芝生用の計算ソフトを載せています。薬剤・液肥の希釈倍率計算、スプレイヤーも対応しています。"
@@ -60,6 +69,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Three.js GLTF Loader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="/favicon.ico" id="favicon" />
 
@@ -84,35 +97,49 @@
     </script>
   </head>
   <body>
-    <div class="background-pattern"></div>
+    <!-- Header moved to top -->
     <header>
       <div class="header-content">
-        <div class="header-icon">
-          <i class="fas fa-seedling"></i>
-        </div>
-        <h1>お庭用 お役立ち計算ソフト集<br>（芝生・農薬など）</h1>
+        <h1>
+          <span class="header-icon"><i class="fas fa-seedling"></i></span
+          >お庭用 お役立ち計算ソフト集
+        </h1>
         <p class="header-subtitle">芝生・農薬・ガーデニングの計算を簡単に</p>
       </div>
     </header>
-    <main>
-      <div class="container">
-        <section class="tools-section">
-          <div class="section-header">
-            <i class="fas fa-calculator section-icon"></i>
-            <h2>希釈倍率計算関係</h2>
-          </div>
-          <div class="tools-grid" id="work-list1"></div>
-        </section>
 
-        <section class="tools-section">
-          <div class="section-header">
-            <i class="fas fa-tools section-icon"></i>
-            <h2>その他</h2>
-          </div>
-          <div class="tools-grid" id="work-list2"></div>
-        </section>
+    <!-- Content wrapper with left 3D canvas and right main content -->
+    <div id="content-wrapper">
+      <!-- 3D Canvas for grass -->
+      <div id="grass-canvas-container">
+        <canvas id="grass-canvas"></canvas>
       </div>
-    </main>
+
+      <!-- Main content container -->
+      <div id="main-content">
+        <div class="background-pattern"></div>
+        <main>
+          <div class="container">
+            <section class="tools-section">
+              <div class="section-header">
+                <i class="fas fa-calculator section-icon"></i>
+                <h2>希釈倍率計算関係</h2>
+              </div>
+              <div class="tools-grid" id="work-list1"></div>
+            </section>
+
+            <section class="tools-section">
+              <div class="section-header">
+                <i class="fas fa-tools section-icon"></i>
+                <h2>その他</h2>
+              </div>
+              <div class="tools-grid" id="work-list2"></div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
     <footer>
       <div class="footer-content">
         <p>&copy; 2024 <a href="https://snow-leaf.com">SnowLeaf</a></p>
@@ -121,6 +148,8 @@
         </div>
       </div>
     </footer>
+
     <script src="main.js"></script>
+    <script src="grass-3d.js"></script>
   </body>
 </html>

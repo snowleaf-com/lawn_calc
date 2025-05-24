@@ -7,13 +7,13 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-T4XDMJL2SD"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || []
       function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
       }
-      gtag("js", new Date());
+      gtag('js', new Date())
 
-      gtag("config", "G-T4XDMJL2SD");
+      gtag('config', 'G-T4XDMJL2SD')
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -282,67 +282,67 @@
     </form> -->
     <script>
       // input要素を取得
-      const sikiatu = document.getElementById("sikiatu");
-      const sikimensekitate = document.getElementById("sikimensekitate");
-      const sikimensekiyoko = document.getElementById("sikimensekiyoko");
-      const hijuu = document.getElementsByName("hijuu")[0];
-      const hukurokg = document.getElementById("hukurokg");
+      const sikiatu = document.getElementById('sikiatu')
+      const sikimensekitate = document.getElementById('sikimensekitate')
+      const sikimensekiyoko = document.getElementById('sikimensekiyoko')
+      const hijuu = document.getElementsByName('hijuu')[0]
+      const hukurokg = document.getElementById('hukurokg')
 
       // span要素を取得
-      const sikimenseki = document.getElementsByName("sikimenseki")[0];
-      const hituyousunaryou = document.getElementsByName("hituyousunaryou")[0];
-      const hukuroton = document.getElementsByName("hukuroton")[0];
-      const hukuroryubei = document.getElementsByName("hukuroryubei");
-      const hituyouhukuro = document.getElementById("hituyouhukuro");
+      const sikimenseki = document.getElementsByName('sikimenseki')[0]
+      const hituyousunaryou = document.getElementsByName('hituyousunaryou')[0]
+      const hukuroton = document.getElementsByName('hukuroton')[0]
+      const hukuroryubei = document.getElementsByName('hukuroryubei')
+      const hituyouhukuro = document.getElementById('hituyouhukuro')
 
-      const hijuu2 = document.getElementsByName("hijuu")[1];
-      const sikimenseki2 = document.getElementsByName("sikimenseki")[1];
-      const hituyousunaryou2 = document.getElementsByName("hituyousunaryou")[1];
-      const hukuroton2 = document.getElementsByName("hukuroton")[1];
+      const hijuu2 = document.getElementsByName('hijuu')[1]
+      const sikimenseki2 = document.getElementsByName('sikimenseki')[1]
+      const hituyousunaryou2 = document.getElementsByName('hituyousunaryou')[1]
+      const hukuroton2 = document.getElementsByName('hukuroton')[1]
 
       // input要素にイベントリスナーを設定
-      sikiatu.addEventListener("input", calculate);
-      sikimensekitate.addEventListener("input", calculate);
-      sikimensekiyoko.addEventListener("input", calculate);
-      hijuu.addEventListener("input", calculate);
-      hukurokg.addEventListener("input", calculate);
+      sikiatu.addEventListener('input', calculate)
+      sikimensekitate.addEventListener('input', calculate)
+      sikimensekiyoko.addEventListener('input', calculate)
+      hijuu.addEventListener('input', calculate)
+      hukurokg.addEventListener('input', calculate)
 
       function calculate() {
         // 敷圧をmに変換して表示
-        const sikiatumm = sikiatu.value / 100;
-        document.getElementById("sikiatumm").textContent = sikiatumm;
+        const sikiatumm = sikiatu.value / 100
+        document.getElementById('sikiatumm').textContent = sikiatumm
 
         // 敷面積を計算して表示
-        const sikimensekiValue = sikimensekitate.value * sikimensekiyoko.value;
-        sikimenseki.textContent = sikimensekiValue;
-        sikimenseki2.textContent = sikimensekiValue;
+        const sikimensekiValue = sikimensekitate.value * sikimensekiyoko.value
+        sikimenseki.textContent = sikimensekiValue
+        sikimenseki2.textContent = sikimensekiValue
 
         // 必要砂量を計算して表示
-        const hituyousunaryouValue = sikimensekiValue * sikiatumm;
-        hituyousunaryou.textContent = hituyousunaryouValue;
-        hituyousunaryou2.textContent = hituyousunaryouValue;
+        const hituyousunaryouValue = sikimensekiValue * sikiatumm
+        hituyousunaryou.textContent = hituyousunaryouValue
+        hituyousunaryou2.textContent = hituyousunaryouValue
 
         // 砂の比重を取得して表示
-        const hijuuValue = hijuu.value;
-        hijuu2.textContent = hijuuValue;
+        const hijuuValue = hijuu.value
+        hijuu2.textContent = hijuuValue
         for (let i = 0; i < hukuroryubei.length; i++) {
-          hukuroryubei[i].textContent = hituyousunaryouValue / hijuuValue;
+          hukuroryubei[i].textContent = hituyousunaryouValue / hijuuValue
         }
 
         // 砂袋の重さを計算して表示
-        const hukurotonValue = hukurokg.value / 1000;
-        hukuroton.textContent = hukurotonValue;
-        hukuroton2.textContent = hukurotonValue;
+        const hukurotonValue = hukurokg.value / 1000
+        hukuroton.textContent = hukurotonValue
+        hukuroton2.textContent = hukurotonValue
 
         // 砂袋の立米を計算して表示
-        const hukuroryubeiValue = hukurotonValue / hijuuValue;
+        const hukuroryubeiValue = hukurotonValue / hijuuValue
         for (let i = 0; i < hukuroryubei.length; i++) {
-          hukuroryubei[i].textContent = hukuroryubeiValue;
+          hukuroryubei[i].textContent = hukuroryubeiValue
         }
 
         // 砂袋の数を計算して表示
-        const hituyouhukuroValue = hituyousunaryouValue / hukuroryubeiValue;
-        hituyouhukuro.textContent = hituyouhukuroValue;
+        const hituyouhukuroValue = hituyousunaryouValue / hukuroryubeiValue
+        hituyouhukuro.textContent = hituyouhukuroValue
       }
     </script>
   </body>
