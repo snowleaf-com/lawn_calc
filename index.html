@@ -27,7 +27,6 @@
       content="芝生,スプレイヤー,農薬,希釈倍率,希釈倍率計算,液肥,薬剤,除草剤,殺虫剤,防除,砂の厚み計算,砂利,石,土,砕石"
     />
     <meta name="author" content="snowleaf" />
-    <!-- OGP (Open Graph Protocol) tags -->
     <meta
       property="og:title"
       content="お庭用 お役立ち計算ソフト集（芝生・農薬など）"
@@ -45,7 +44,6 @@
     />
     <meta property="og:locale" content="ja_JP" />
 
-    <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -57,26 +55,21 @@
     />
     <meta name="twitter:image" content="https://garden.snow-leaf.com/ogp.png" />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Three.js GLTF Loader -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="/favicon.ico" id="favicon" />
 
-    <!-- JSON-LD for SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -97,41 +90,40 @@
     </script>
   </head>
   <body>
-    <!-- Header moved to top -->
-    <header>
-      <div class="header-content">
-        <h1>
-          <span class="header-icon"><i class="fas fa-seedling"></i></span
-          >お庭用 お役立ち計算ソフト集
-        </h1>
-        <p class="header-subtitle">芝生・農薬・ガーデニングの計算を簡単に</p>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="brand">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <div class="brand__text">
+            <h1 class="brand__title">お庭用 お役立ち計算ソフト集</h1>
+            <p class="brand__tagline">
+              芝生・農薬・ガーデニングの計算を簡単に
+            </p>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- Content wrapper with left 3D canvas and right main content -->
-    <div id="content-wrapper">
-      <!-- 3D Canvas for grass -->
-      <div id="grass-canvas-container">
+    <div id="content-wrapper" class="layout-split">
+      <aside id="grass-canvas-container" class="hero-visual" aria-hidden="true">
         <canvas id="grass-canvas"></canvas>
-      </div>
+      </aside>
 
-      <!-- Main content container -->
-      <div id="main-content">
-        <div class="background-pattern"></div>
-        <main>
+      <div id="main-content" class="main-panel">
+        <main class="page-main">
           <div class="container">
             <section class="tools-section">
-              <div class="section-header">
-                <i class="fas fa-calculator section-icon"></i>
-                <h2>希釈倍率計算関係</h2>
+              <div class="section-heading">
+                <span class="section-heading__label">Tools</span>
+                <h2 class="section-heading__title">希釈倍率計算関係</h2>
               </div>
               <div class="tools-grid" id="work-list1"></div>
             </section>
 
             <section class="tools-section">
-              <div class="section-header">
-                <i class="fas fa-tools section-icon"></i>
-                <h2>その他</h2>
+              <div class="section-heading">
+                <span class="section-heading__label">More</span>
+                <h2 class="section-heading__title">その他</h2>
               </div>
               <div class="tools-grid" id="work-list2"></div>
             </section>
@@ -140,12 +132,12 @@
       </div>
     </div>
 
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2024 <a href="https://snow-leaf.com">SnowLeaf</a></p>
-        <div class="footer-icon">
-          <i class="fas fa-leaf"></i>
-        </div>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__copy">
+          &copy; 2024
+          <a href="https://snow-leaf.com">SnowLeaf</a>
+        </p>
       </div>
     </footer>
 

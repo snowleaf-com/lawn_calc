@@ -51,56 +51,42 @@ function createToolCard(work) {
   const div = document.createElement('div')
   div.className = 'tool-card'
   div.innerHTML = `
-    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-      <i class="${work.icon}" style="font-size: 2rem; color: #22c55e;"></i>
-      <h3 style="margin: 0;">${work.title}</h3>
+    <div class="tool-card__head">
+      <i class="tool-card__icon ${work.icon}" aria-hidden="true"></i>
+      <h3 class="tool-card__title">${work.title}</h3>
     </div>
-    <p>${work.description}</p>
-    <button class="tool-button" onclick="location.href='${work.url}'">
-      <i class="fas fa-arrow-right" style="margin-right: 0.5rem;"></i>
-      計算を開始する
-    </button>
+    <p class="tool-card__desc">${work.description}</p>
+    <a class="tool-button" href="${work.url}">
+      <span>計算を開始する</span>
+      <i class="fas fa-arrow-right tool-button__arrow" aria-hidden="true"></i>
+    </a>
   `
   return div
 }
 
 works.forEach((work) => {
-  const card = createToolCard(work)
-  workList.appendChild(card)
+  workList.appendChild(createToolCard(work))
 })
 
 works2.forEach((work) => {
-  const card = createToolCard(work)
-  workList2.appendChild(card)
+  workList2.appendChild(createToolCard(work))
 })
 
-// Add scroll animation
 const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px',
+  threshold: 0.08,
+  rootMargin: '0px 0px -40px 0px',
 }
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1'
-      entry.target.style.transform = 'translateY(0)'
+      entry.target.classList.add('tool-card--visible')
     }
   })
 }, observerOptions)
 
-// Apply initial styles and observe cards
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.tool-card')
-  cards.forEach((card, index) => {
-    // Set initial state
-    card.style.opacity = '0'
-    card.style.transform = 'translateY(50px)'
-    card.style.transition = `opacity 0.6s ease ${
-      index * 0.1
-    }s, transform 0.6s ease ${index * 0.1}s`
-
-    // Start observing
+  document.querySelectorAll('.tool-card').forEach((card) => {
     observer.observe(card)
   })
 })
